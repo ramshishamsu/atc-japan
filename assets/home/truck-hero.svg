@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f3040"/><stop offset="1" stop-color="#274f61"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3c454a"/><stop offset="1" stop-color="#11181c"/></linearGradient>
+    <linearGradient id="cab" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f9fa"/><stop offset="1" stop-color="#bfc8cd"/></linearGradient>
+    <linearGradient id="cargo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfe6e9"/><stop offset="1" stop-color="#9ca9ae"/></linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1320" cy="190" r="95" fill="#f4b54b" opacity=".35"/>
+  <path d="M0 490 Q380 370 760 480 T1600 420 V900 H0Z" fill="#1b343d" opacity=".75"/>
+  <rect y="585" width="1600" height="315" fill="url(#road)"/>
+  <path d="M0 735 H1600" stroke="#d4a33e" stroke-width="9" stroke-dasharray="110 70" opacity=".75"/>
+  <ellipse cx="790" cy="750" rx="600" ry="95" fill="#000" opacity=".42" filter="url(#shadow)"/>
+  <!-- cargo body -->
+  <rect x="395" y="370" width="710" height="265" rx="14" fill="url(#cargo)" stroke="#74848b" stroke-width="8"/>
+  <rect x="420" y="395" width="660" height="210" rx="7" fill="#cfd8dc"/>
+  <path d="M420 430 H1080 M420 490 H1080 M420 550 H1080" stroke="#a1adb2" stroke-width="5" opacity=".8"/>
+  <text x="750" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="700" fill="#173746" letter-spacing="7">ATC JAPAN</text>
+  <text x="750" y="548" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="#53656d" letter-spacing="4">JAPANESE VEHICLE EXPORT</text>
+  <!-- cab -->
+  <path d="M1060 420 L1190 420 Q1225 420 1255 455 L1340 555 Q1355 575 1355 610 V635 H1045 Z" fill="url(#cab)" stroke="#77878e" stroke-width="8"/>
+  <path d="M1115 445 H1190 Q1215 445 1232 465 L1270 510 H1115 Z" fill="#244c5e" stroke="#5d737e" stroke-width="5"/>
+  <path d="M1115 530 H1288 L1328 580 H1115 Z" fill="#2c5b6e" opacity=".9"/>
+  <rect x="1270" y="535" width="34" height="62" rx="8" fill="#f2a71b"/>
+  <rect x="1040" y="585" width="85" height="22" rx="11" fill="#f2a71b"/>
+  <!-- wheels -->
+  <g fill="#11181c" stroke="#718087" stroke-width="9">
+    <circle cx="560" cy="665" r="78"/><circle cx="560" cy="665" r="33" fill="#c7d0d4"/>
+    <circle cx="1140" cy="665" r="78"/><circle cx="1140" cy="665" r="33" fill="#c7d0d4"/>
+    <circle cx="1285" cy="665" r="78"/><circle cx="1285" cy="665" r="33" fill="#c7d0d4"/>
+  </g>
+  <rect x="70" y="90" width="410" height="74" rx="37" fill="#0c2532" opacity=".82"/>
+  <text x="275" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#fff" letter-spacing="3">TRUCKS FROM JAPAN</text>
+</svg>

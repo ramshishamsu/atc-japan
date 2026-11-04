@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ATC JAPAN - Japanese used cars, trucks and machinery exporter.">
+  <title>ATC JAPAN | Japanese Used Vehicles Export</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR -->
+  <div class="utility-bar">
+    <div class="container-xl utility-inner">
+      <div class="utility-left">
+        <span><i class="fa-solid fa-envelope"></i> bashirtokyo@gmail.com</span>
+        <span><i class="fa-solid fa-phone"></i> +81 80-3252-1347</span>
+      </div>
+      <div class="utility-right">
+        <span>Ahmed Bashir</span>
+        <span class="japan-time"><i class="fa-solid fa-clock"></i> Japan Time <b id="japanTime">--:--:--</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container-xl">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand brand-wrap" href="index.html">
+          <span class="brand-mark atc-logo-mark"><img src="assets/logos/atc-japan.png" alt="ATC JAPAN logo"></span>
+          <span>
+            <strong>ATC JAPAN</strong>
+            <small>JAPANESE VEHICLE EXPORT</small>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="stock.html">Stock List</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#how-to-buy">How To Buy</a></li>
+            <li class="nav-item"><a class="nav-link" href="#why-us">Why ATC</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item ms-lg-2"><a class="btn btn-orange nav-cta" href="https://wa.me/818032521347" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active hero-slide hero-one">
+          <div class="hero-overlay"></div>
+          <div class="container-xl hero-content">
+            <span class="eyebrow">JAPAN → WORLDWIDE EXPORT</span>
+            <h1>Japanese Vehicles.<br><span>Global Delivery.</span></h1>
+            <p>Quality used cars, trucks and construction machinery sourced from Japan for customers around the world.</p>
+            <div class="hero-buttons">
+              <a href="stock.html" class="btn btn-orange btn-lg">Explore Stock <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="contact.html" class="btn btn-outline-light btn-lg">Send Inquiry</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item hero-slide hero-two">
+          <div class="hero-overlay"></div>
+          <div class="container-xl hero-content">
+            <span class="eyebrow">TRUCKS & COMMERCIAL VEHICLES</span>
+            <h1>Reliable Trucks<br><span>From Japan.</span></h1>
+            <p>Flat bodies, dump trucks, crane trucks, tankers, vans and more.</p>
+            <a href="stock.html?category=Truck" class="btn btn-orange btn-lg">Browse Trucks <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="carousel-item hero-slide hero-three">
+          <div class="hero-overlay"></div>
+          <div class="container-xl hero-content">
+            <span class="eyebrow">CONSTRUCTION MACHINERY</span>
+            <h1>Heavy Equipment<br><span>Ready To Work.</span></h1>
+            <p>Excavators, loaders, forklifts and agricultural machinery from Japanese brands.</p>
+            <a href="stock.html?category=Machinery" class="btn btn-orange btn-lg">Browse Machinery <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- CATEGORY CARDS OVER HERO -->
+    <div class="container-xl category-overlap">
+      <div class="category-card" onclick="goCategory('Truck')">
+        <div class="category-image truck-bg"></div>
+        <div class="category-body">
+          <div><span class="category-icon"><i class="fa-solid fa-truck"></i></span><h3>Trucks</h3></div>
+          <span>Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </div>
+      <div class="category-card" onclick="goCategory('Car')">
+        <div class="category-image car-bg"></div>
+        <div class="category-body">
+          <div><span class="category-icon"><i class="fa-solid fa-car-side"></i></span><h3>Cars</h3></div>
+          <span>Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </div>
+      <div class="category-card" onclick="goCategory('Machinery')">
+        <div class="category-image machine-bg"></div>
+        <div class="category-body">
+          <div><span class="category-icon"><i class="fa-solid fa-tractor"></i></span><h3>Machinery</h3></div>
+          <span>Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </div>
+      <div class="category-card" onclick="goCategory('Parts')">
+        <div class="category-image parts-bg"></div>
+        <div class="category-body">
+          <div><span class="category-icon"><i class="fa-solid fa-gears"></i></span><h3>Auto Parts</h3></div>
+          <span>Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SEARCH -->
+  <section class="search-section">
+    <div class="container-xl">
+      <div class="search-panel">
+        <div class="search-heading">
+          <div>
+            <span class="section-kicker">FIND YOUR VEHICLE</span>
+            <h2>Quick Search</h2>
+          </div>
+          <span class="search-mini-note"><i class="fa-solid fa-circle-check"></i> Japan stock</span>
+        </div>
+
+        <form id="quickSearchForm" class="row g-3">
+          <div class="col-lg-2 col-md-4">
+            <label>Category</label>
+            <select id="searchCategory" class="form-select">
+              <option value="">All</option><option>Truck</option><option>Car</option><option>Machinery</option><option>Parts</option>
+            </select>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <label>Body Type</label>
+            <select id="searchBody" class="form-select">
+              <option value="">Any body type</option>
+              <option>Flat Body</option><option>Van Wing</option><option>Freezer Truck</option><option>Crane Truck</option>
+              <option>Dump Tipper</option><option>Concrete Mixer</option><option>Tank Truck</option><option>Garbage Truck</option>
+              <option>SUV</option><option>Sedan</option><option>Mini Van</option><option>Excavator</option>
+            </select>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <label>Make</label>
+            <select id="searchMake" class="form-select">
+              <option value="">All makes</option>
+              <option>Isuzu</option><option>Mitsubishi Fuso</option><option>Nissan</option><option>Hino</option>
+              <option>UD Trucks</option><option>Mazda</option><option>Toyota</option><option>Suzuki</option>
+              <option>Daihatsu</option><option>Subaru</option><option>Honda</option><option>Mercedes-Benz</option>
+              <option>Volvo</option><option>Komatsu</option><option>Hitachi</option><option>Kubota</option>
+              <option>Caterpillar</option><option>Yanmar</option><option>Sumitomo</option>
+            </select>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <label>From Year</label>
+            <select id="searchFromYear" class="form-select"><option value="">Any</option></select>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <label>To Year</label>
+            <select id="searchToYear" class="form-select"><option value="">Any</option></select>
+          </div>
+          <div class="col-lg-2 col-md-4 d-flex align-items-end">
+            <button class="btn btn-orange search-submit w-100" type="submit">Search <i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <div class="col-12">
+            <div class="keyword-wrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input id="searchKeyword" type="text" placeholder="Search by keyword, stock ID, model...">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY SELECTOR -->
+  <section class="section-space">
+    <div class="container-xl text-center">
+      <span class="section-kicker">SHOP BY CATEGORY</span>
+      <h2 class="section-title">Select a Category</h2>
+      <div class="category-tabs">
+        <button class="category-tab active" onclick="filterHomeCategory('Truck', this)"><i class="fa-solid fa-truck"></i> Truck</button>
+        <button class="category-tab" onclick="filterHomeCategory('Car', this)"><i class="fa-solid fa-car"></i> Car</button>
+        <button class="category-tab" onclick="filterHomeCategory('Machinery', this)"><i class="fa-solid fa-tractor"></i> Machinery</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH BY MAKE -->
+  <section class="section-space pt-0">
+    <div class="container-xl">
+      <div class="section-head">
+        <div><span class="section-kicker">MANUFACTURERS</span><h2 class="section-title">Search by Make</h2></div>
+        <a href="stock.html" class="view-all">View all <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="brand-grid" id="brandGrid"></div>
+    </div>
+  </section>
+
+  <!-- SEARCH BY BODY TYPE -->
+  <section class="section-space light-section">
+    <div class="container-xl">
+      <span class="section-kicker">VEHICLE TYPES</span>
+      <h2 class="section-title">Search by Body Type</h2>
+      <div class="body-grid" id="bodyGrid"></div>
+    </div>
+  </section>
+
+  <!-- VEHICLE LISTS -->
+  <section class="section-space">
+    <div class="container-xl">
+      <div class="section-head">
+        <div><span class="section-kicker">LATEST STOCK</span><h2 class="section-title" id="homeVehicleTitle">Used Cars</h2></div>
+        <a href="stock.html" class="btn btn-orange btn-sm">Show More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="vehicle-grid" id="homeVehicles"></div>
+    </div>
+  </section>
+
+  <section class="section-space pt-0">
+    <div class="container-xl">
+      <div class="section-head">
+        <div><span class="section-kicker">COMMERCIAL STOCK</span><h2 class="section-title">Used Trucks</h2></div>
+        <a href="stock.html?category=Truck" class="btn btn-orange btn-sm">Show More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="vehicle-grid" id="homeTrucks"></div>
+    </div>
+  </section>
+
+  <section class="section-space pt-0">
+    <div class="container-xl">
+      <div class="section-head">
+        <div><span class="section-kicker">HEAVY EQUIPMENT</span><h2 class="section-title">Used Machinery</h2></div>
+        <a href="stock.html?category=Machinery" class="btn btn-orange btn-sm">Show More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="vehicle-grid" id="homeMachinery"></div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section-space light-section" id="why-us">
+    <div class="container-xl">
+      <div class="text-center mb-5">
+        <span class="section-kicker">WHY ATC JAPAN?</span>
+        <h2 class="section-title">A Reliable Partner for Japanese Vehicles</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card"><i class="fa-solid fa-earth-asia"></i><h3>Worldwide Export</h3><p>We connect Japanese vehicle stock with customers and businesses across international markets.</p></div>
+        <div class="why-card"><i class="fa-solid fa-medal"></i><h3>Quality Selection</h3><p>Choose from carefully presented used cars, commercial vehicles and machinery.</p></div>
+        <div class="why-card"><i class="fa-solid fa-ship"></i><h3>Shipping Support</h3><p>Get assistance with export coordination and shipping arrangements from Japan.</p></div>
+        <div class="why-card"><i class="fa-solid fa-hand-holding-dollar"></i><h3>Competitive Pricing</h3><p>We aim to provide transparent vehicle information and competitive export quotations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO BUY -->
+  <section class="section-space" id="how-to-buy">
+    <div class="container-xl">
+      <div class="text-center mb-5"><span class="section-kicker">SIMPLE PROCESS</span><h2 class="section-title">How To Buy From ATC JAPAN</h2></div>
+      <div class="process-grid">
+        <div class="process-step"><span>01</span><i class="fa-solid fa-car"></i><h3>Choose Vehicle</h3><p>Browse our stock and select the vehicle you are interested in.</p></div>
+        <div class="process-step"><span>02</span><i class="fa-solid fa-paper-plane"></i><h3>Send Inquiry</h3><p>Contact Ahmed Bashir with the stock ID and your requirements.</p></div>
+        <div class="process-step"><span>03</span><i class="fa-solid fa-file-invoice-dollar"></i><h3>Get Quotation</h3><p>Receive vehicle, shipping and payment information.</p></div>
+        <div class="process-step"><span>04</span><i class="fa-solid fa-ship"></i><h3>Shipping</h3><p>After the order process, your vehicle is prepared for export.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="cta-section">
+    <div class="container-xl cta-inner">
+      <div>
+        <span class="section-kicker light">READY TO FIND YOUR VEHICLE?</span>
+        <h2>Talk to ATC JAPAN today.</h2>
+        <p>Ahmed Bashir · +81 80-3252-1347 · bashirtokyo@gmail.com</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-light btn-lg">Contact Us</a>
+        <a href="https://wa.me/818032521347" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container-xl">
+      <div class="footer-grid">
+        <div class="footer-company">
+          <div class="brand-wrap footer-brand">
+            <span class="brand-mark atc-logo-mark"><img src="assets/logos/atc-japan.png" alt="ATC JAPAN logo"></span>
+            <span><strong>ATC JAPAN</strong><small>JAPANESE VEHICLE EXPORT</small></span>
+          </div>
+          <p>Japanese used cars, trucks and construction machinery for worldwide customers.</p>
+          <p><i class="fa-solid fa-user"></i> Ahmed Bashir</p>
+          <p><i class="fa-solid fa-envelope"></i> bashirtokyo@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> +81 80-3252-1347</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://wa.me/818032521347" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div><h4>Main Links</h4><a href="about.html">About Us</a><a href="stock.html">Stock List</a><a href="#how-to-buy">How To Buy</a><a href="#why-us">Why ATC Japan</a><a href="contact.html">Contact</a></div>
+        <div><h4>Used Cars</h4><a href="stock.html?category=Car&make=Toyota">Toyota</a><a href="stock.html?category=Car&make=Nissan">Nissan</a><a href="stock.html?category=Car&make=Honda">Honda</a><a href="stock.html?category=Car&make=Suzuki">Suzuki</a><a href="stock.html?category=Car&make=Mazda">Mazda</a></div>
+        <div><h4>Used Trucks</h4><a href="stock.html?category=Truck&body=Flat%20Body">Flat Body</a><a href="stock.html?category=Truck&body=Crane%20Truck">Crane Truck</a><a href="stock.html?category=Truck&body=Dump%20Tipper">Dump Tipper</a><a href="stock.html?category=Truck&body=Tank%20Truck">Tank Truck</a><a href="stock.html?category=Truck&body=Van%20Wing">Van Wing</a></div>
+        <div><h4>Machinery</h4><a href="stock.html?category=Machinery&make=Komatsu">Komatsu</a><a href="stock.html?category=Machinery&make=Hitachi">Hitachi</a><a href="stock.html?category=Machinery&make=Kubota">Kubota</a><a href="stock.html?category=Machinery&make=Caterpillar">Caterpillar</a><a href="stock.html?category=Machinery&make=Yanmar">Yanmar</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 ATC JAPAN. All Rights Reserved.</span><span>Japanese Used Vehicle Export</span></div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="floating-whatsapp" href="https://wa.me/818032521347" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i><span>WhatsApp<br><small>Chat With Seller</small></span>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

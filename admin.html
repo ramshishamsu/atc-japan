@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | ATC JAPAN</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+
+<div id="adminLogin" class="admin-login">
+  <div class="admin-login-card">
+    <div class="admin-logo"><span class="brand-mark atc-logo-mark"><img src="assets/logos/atc-japan.png" alt="ATC JAPAN logo"></span><h1>ATC JAPAN</h1></div>
+    <p>Admin Dashboard</p>
+    <label>Password</label>
+    <input id="adminPassword" type="password" class="form-control mb-3" placeholder="Enter admin password">
+    <button id="adminLoginBtn" class="btn btn-orange w-100">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+    <small class="demo-note">Browser-only demo login. Vehicle data is saved only in this browser; this password is not secure for public production use.</small>
+  </div>
+</div>
+
+<div id="adminApp" class="admin-app d-none">
+  <aside class="admin-sidebar">
+    <div class="admin-brand"><span class="brand-mark atc-logo-mark"><img src="assets/logos/atc-japan.png" alt="ATC JAPAN logo"></span><div><strong>ATC JAPAN</strong><small>ADMIN</small></div></div>
+    <a class="active" href="#dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+    <a href="#vehicles"><i class="fa-solid fa-car"></i> Vehicles</a>
+    <a href="#addVehicle"><i class="fa-solid fa-plus"></i> Add Vehicle</a>
+    <a href="index.html" target="_blank"><i class="fa-solid fa-globe"></i> View Website</a>
+    <button id="adminLogout" class="admin-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-top"><div><span class="section-kicker">ATC JAPAN</span><h1>Dashboard</h1><small id="storageInfo" class="text-muted">Shared online inventory.</small></div><div class="d-flex gap-2 flex-wrap"><button id="exportBackup" type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-download"></i> Export Backup</button><a href="index.html" class="btn btn-outline-dark">View Website</a></div></div>
+
+    <section id="dashboard" class="admin-section">
+      <div class="admin-stats">
+        <div><i class="fa-solid fa-car"></i><span>Total Vehicles</span><strong id="statVehicles">0</strong></div>
+        <div><i class="fa-solid fa-truck"></i><span>Trucks</span><strong id="statTrucks">0</strong></div>
+        <div><i class="fa-solid fa-tractor"></i><span>Machinery</span><strong id="statMachinery">0</strong></div>
+        <div><i class="fa-solid fa-car-side"></i><span>Cars</span><strong id="statCars">0</strong></div>
+      </div>
+    </section>
+
+    <section id="addVehicle" class="admin-section">
+      <div class="admin-card"><div class="admin-card-head"><h2>Add / Edit Vehicle</h2></div>
+      <form id="vehicleForm"><input type="hidden" id="vehicleId">
+        <div class="row g-3">
+          <div class="col-md-6"><label>Vehicle Name</label><input id="vName" class="form-control" required placeholder="2024 Toyota Land Cruiser"></div>
+          <div class="col-md-3"><label>Category</label><select id="vCategory" class="form-select" required><option>Car</option><option>Truck</option><option>Machinery</option></select></div>
+          <div class="col-md-3"><label>Make</label><input id="vMake" class="form-control" required placeholder="Toyota"></div>
+          <div class="col-md-3"><label>Model</label><input id="vModel" class="form-control" placeholder="Land Cruiser Prado"></div>
+          <div class="col-md-3"><label>Body Type</label><input id="vBody" class="form-control" required placeholder="SUV"></div>
+          <div class="col-md-2"><label>Year</label><input id="vYear" type="number" class="form-control" required value="2024"></div>
+          <div class="col-md-2"><label>Mileage / Hours</label><input id="vMileage" class="form-control" placeholder="25,000 KM"></div>
+          <div class="col-md-2"><label>Fuel</label><input id="vFuel" class="form-control" placeholder="Diesel"></div>
+          <div class="col-md-2"><label>Transmission</label><input id="vTransmission" class="form-control" placeholder="Auto"></div>
+          <div class="col-md-2"><label>Drive</label><input id="vDrive" class="form-control" placeholder="4WD"></div>
+          <div class="col-md-2"><label>Price USD</label><input id="vPrice" type="number" class="form-control" required value="25000"></div>
+          <div class="col-12">
+  <label>Vehicle Photos <span class="field-note">(Select multiple photos from your gallery)</span></label>
+  <input id="vImages" type="file" class="form-control" accept="image/*" multiple>
+  <div id="imageUploadHint" class="upload-hint"><i class="fa-solid fa-images"></i> Upload front, rear, side, interior, dashboard and other vehicle photos.</div>
+  <div id="imagePreview" class="admin-image-preview"></div>
+</div>
+<div class="col-12"><label>Vehicle Description</label><textarea id="vDescription" class="form-control" rows="4" placeholder="Add a short description of this vehicle..."></textarea></div>
+          <div class="col-12 d-flex gap-2 flex-wrap"><button class="btn btn-orange" type="submit"><i class="fa-solid fa-save"></i> Save Vehicle</button><button id="cancelEdit" type="button" class="btn btn-outline-secondary d-none">Cancel Edit</button></div>
+        </div>
+      </form></div>
+    </section>
+
+    <section id="vehicles" class="admin-section">
+      <div class="admin-card"><div class="admin-card-head"><h2>Manage Vehicles</h2><input id="adminSearch" class="form-control admin-search" placeholder="Search vehicles..."></div>
+      <div class="table-responsive"><table class="table align-middle"><thead><tr><th>Vehicle</th><th>Category</th><th>Make</th><th>Year</th><th>Price</th><th>Actions</th></tr></thead><tbody id="adminVehicleTable"></tbody></table></div></div>
+    </section>
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+</body></html>
