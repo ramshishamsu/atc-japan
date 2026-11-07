@@ -5,7 +5,7 @@ const headers = () => ({
   'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
   'Accept': 'application/vnd.github+json',
   'X-GitHub-Api-Version': '2022-11-28',
-  'User-Agent': 'ATC-JAPAN-Inventory'
+  'User-Agent': 'ATC-Inventory'
 });
 const repoPath = (path) => `${API}/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/contents/${path}`;
 const branch = () => process.env.GITHUB_BRANCH || 'main';
