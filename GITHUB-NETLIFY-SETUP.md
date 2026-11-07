@@ -26,7 +26,7 @@
 - Every photo upload and inventory update creates GitHub commits and triggers the connected Netlify build. Large catalogues or frequent uploads can hit GitHub API / Netlify build limits. This is best for a modest inventory, not a high-volume stock platform.
 - Existing browser localStorage records are not automatically migrated. Export the old localStorage backup from the previous admin version and manually import/recreate the vehicles using the new admin, or ask for a migration script before switching.
 - The starter `vehicles.json` is empty. If you want the current demo inventory to remain, copy its vehicle records from `js/data.js` into `vehicles.json` before first deployment.
-- The admin password in Netlify environment variables is not the old demo password `admin123`; choose your own strong password.
+- Set a new, strong admin password directly in Netlify Environment variables. Never write the actual password in this guide or any committed project file.
 
 ## Test checklist
 1. Visit the public site and confirm vehicle list loads.
