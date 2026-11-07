@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setInterval(updateJapanTime, 1000);
 
   fillYearSelects();
-  renderBrandGrid();
+  renderBrandGrid('Truck');
   renderBodyGrid();
   renderHomeVehicles();
 
@@ -41,13 +41,13 @@ function fillYearSelects(){
   });
 }
 
-function renderBrandGrid(){
-  const grid=document.getElementById("brandGrid"); if(!grid) return;
-  grid.innerHTML=brandList.map(([name,logo])=>`
-    <a class="brand-card" href="stock.html?make=${encodeURIComponent(name)}">
-      <span class="brand-logo">
-        <img src="${logo}" alt="${escapeHtml(name)} logo" loading="lazy">
-      </span>
+function renderBrandGrid(category="Truck"){
+  const grid=document.getElementById("brandGrid");
+  if(!grid) return;
+  const brands=brandGroups[category] || brandGroups.Truck || [];
+  grid.innerHTML=brands.map(([name,logo])=>`
+    <a class="brand-card" href="stock.html?category=${encodeURIComponent(category)}&make=${encodeURIComponent(name)}" aria-label="View ${escapeHtml(name)} ${escapeHtml(category)}">
+      <span class="brand-logo"><img src="${logo}" alt="${escapeHtml(name)} logo" loading="lazy"></span>
       <span class="brand-name">${escapeHtml(name)}</span>
     </a>`).join("");
 }
@@ -63,11 +63,15 @@ function renderBodyGrid(){
 function goCategory(category){ location.href="stock.html?category="+encodeURIComponent(category); }
 
 function filterHomeCategory(category,btn){
-  document.querySelectorAll(".category-tab").forEach(x=>x.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll(".category-tab").forEach(x=>{
+    x.classList.toggle("active", x===btn);
+    x.setAttribute("aria-pressed", x===btn ? "true" : "false");
+  });
+  renderBrandGrid(category);
   const title=document.getElementById("homeVehicleTitle");
   if(title) title.textContent=category==="Truck"?"Used Trucks":category==="Car"?"Used Cars":"Used Machinery";
-  renderVehicleCards("homeVehicles", getVehicles().filter(v=>v.category===category).slice(0,4));
+  const selected=getVehicles().filter(v=>String(v.category||"").toLowerCase()===category.toLowerCase()).slice(0,4);
+  renderVehicleCards("homeVehicles",selected);
 }
 
 function renderHomeVehicles(){
@@ -112,7 +116,16 @@ function initStockPage(){
     btn.classList.toggle("active",btn.dataset.stockCategory===activeCategory);
     btn.addEventListener("click",()=>{ activeCategory=btn.dataset.stockCategory; document.querySelectorAll("[data-stock-category]").forEach(b=>b.classList.remove("active")); btn.classList.add("active"); applyStockFilters(); });
   });
-  if(params.get("make")) makeEl.value=params.get("make");
+  if(params.get("make")){
+    const requestedMake=params.get("make");
+    if(![...makeEl.options].some(option=>option.value.toLowerCase()===requestedMake.toLowerCase())){
+      const option=document.createElement("option");
+      option.value=requestedMake;
+      option.textContent=requestedMake;
+      makeEl.appendChild(option);
+    }
+    makeEl.value=requestedMake;
+  }
   if(params.get("body")) bodyEl.value=params.get("body");
   if(params.get("keyword")) document.getElementById("stockKeyword").value=params.get("keyword");
   document.getElementById("stockSearchBtn").addEventListener("click",applyStockFilters);

@@ -11,13 +11,40 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('adminPassword').addEventListener('keydown',e=>{if(e.key==='Enter')loginAdmin();});
 });
 async function request(action,payload={},auth=true){
-  const response=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json',...(auth?{Authorization:`Bearer ${adminToken}`}:{})},body:JSON.stringify({action,...payload})});
-  const data=await response.json();if(!response.ok)throw new Error(data.error||'Request failed');return data;
+  let response;
+  try {
+    response=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json',...(auth?{Authorization:`Bearer ${adminToken}`}:{})},body:JSON.stringify({action,...payload})});
+  } catch(error) {
+    throw new Error('Cannot reach the Netlify admin function. Check that this site is deployed on Netlify and that /.netlify/functions/vehicles is available.');
+  }
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok){
+    if(response.status===404) throw new Error('Admin function not found. Redeploy the complete project folder to Netlify, including netlify/functions/vehicles.js.');
+    if(response.status===503) throw new Error(data.error||'Admin is not configured. Add the required Netlify environment variables and redeploy.');
+    throw new Error(data.error||`Request failed (HTTP ${response.status}).`);
+  }
+  return data;
 }
 async function loginAdmin(){
-  const button=document.getElementById('adminLoginBtn');button.disabled=true;
-  try{const data=await request('login',{password:document.getElementById('adminPassword').value},false);adminToken=data.token;sessionStorage.setItem('atcAdminToken',adminToken);document.getElementById('adminLogin').classList.add('d-none');document.getElementById('adminApp').classList.remove('d-none');await initAdmin();}
-  catch(e){alert(e.message);}finally{button.disabled=false;}
+  const button=document.getElementById('adminLoginBtn');
+  const password=document.getElementById('adminPassword').value;
+  if(!password){alert('Please enter your admin password.');return;}
+  button.disabled=true;
+  try{
+    const data=await request('login',{password},false);
+    if(!data.token) throw new Error('The server did not return an admin session. Check the Netlify function deployment.');
+    adminToken=data.token;
+    sessionStorage.setItem('atcAdminToken',adminToken);
+    document.getElementById('adminLogin').classList.add('d-none');
+    document.getElementById('adminApp').classList.remove('d-none');
+    await initAdmin();
+  } catch(e) {
+    adminToken='';
+    sessionStorage.removeItem('atcAdminToken');
+    alert(e.message==='Incorrect password'
+      ? 'Incorrect admin password. It must exactly match the ADMIN_PASSWORD value in Netlify environment variables. After changing that value, trigger a new deploy.'
+      : e.message);
+  } finally {button.disabled=false;}
 }
 async function initAdmin(){
   try{const response=await fetch(apiUrl,{cache:'no-store'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not load inventory');adminVehicles=(data.vehicles||[]).map(normalizeVehicle);renderAdmin();}

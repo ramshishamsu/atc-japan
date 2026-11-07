@@ -13,25 +13,38 @@ const defaultVehicles = [
   {id:"ATC-3004", name:"2018 CATERPILLAR MINI EXCAVATOR", category:"Machinery", make:"Caterpillar", body:"Mini Excavator", year:2018, mileage:"3,900 Hours", fuel:"Diesel", transmission:"Hydraulic", drive:"Crawler", price:18500, images:["https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"], description:"Quality Japanese used vehicle available for worldwide export from ATC JAPAN."}
 ];
 
-const brandList = [
-  ["Isuzu","assets/logos/isuzu.png"],
-  ["Mitsubishi Fuso","assets/logos/mitsubishi-fuso.png"],
-  ["Nissan","https://commons.wikimedia.org/wiki/Special:FilePath/Nissan.svg"],
-  ["Hino","assets/logos/hino.png"],
-  ["UD Trucks","assets/logos/ud-trucks.png"],
-  ["Toyota","https://commons.wikimedia.org/wiki/Special:FilePath/Toyota.svg"],
-  ["Suzuki","https://commons.wikimedia.org/wiki/Special:FilePath/Suzuki.svg"],
-  ["Daihatsu","assets/logos/daihatsu.png"],
-  ["Honda","https://commons.wikimedia.org/wiki/Special:FilePath/Honda%20Logo.svg"],
-  ["Mercedes-Benz","assets/logos/mercedes-benz.png"],
-  ["Hitachi","https://commons.wikimedia.org/wiki/Special:FilePath/Hitachi%20Logo%20with%20symbol.svg"],
-  ["Caterpillar","https://commons.wikimedia.org/wiki/Special:FilePath/Caterpillar%20logo.svg"],
-  ["Hyundai","https://commons.wikimedia.org/wiki/Special:FilePath/Hyundai%20logo.svg"],
-  ["Kia","https://commons.wikimedia.org/wiki/Special:FilePath/KIA%20logo3.svg"],
-  ["Lexus","assets/logos/lexus.png"],
-  ["Audi","https://commons.wikimedia.org/wiki/Special:FilePath/Audi%20Logo.svg"],
-  ["Volkswagen","https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen%20Logo.svg"]
-];
+const brandGroups = {
+  Truck: [
+    ["Isuzu","assets/logos/isuzu.png"],
+    ["Mitsubishi Fuso","assets/logos/mitsubishi-fuso.png"],
+    ["Nissan","assets/logos/nissan.svg"],
+    ["Hino","assets/logos/hino.png"],
+    ["UD Trucks","assets/logos/ud-trucks.png"],
+    ["Toyota","assets/logos/toyota.svg"]
+  ],
+  Car: [
+    ["Toyota","assets/logos/toyota.svg"],
+    ["Nissan","assets/logos/nissan.svg"],
+    ["Honda","assets/logos/honda.svg"],
+    ["Suzuki","assets/logos/suzuki.svg"],
+    ["Mazda","assets/logos/mazda.svg"],
+    ["Daihatsu","assets/logos/daihatsu.png"],
+    ["Subaru","assets/logos/subaru.svg"],
+    ["Lexus","assets/logos/lexus.png"],
+    ["Mercedes-Benz","assets/logos/mercedes-benz.png"]
+  ],
+  Machinery: [
+    ["Komatsu","assets/logos/komatsu.svg"],
+    ["Hitachi","assets/logos/hitachi.svg"],
+    ["Kobelco","assets/logos/kobelco.svg"],
+    ["Kato","assets/logos/kato.svg"],
+    ["Sumitomo","assets/logos/sumitomo.svg"],
+    ["Kubota","assets/logos/kubota.svg"],
+    ["Yanmar","assets/logos/yanmar.svg"],
+    ["Denyo","assets/logos/denyo.svg"],
+    ["Caterpillar","assets/logos/caterpillar.svg"]
+  ]
+};
 
 
 const bodyTypes = [

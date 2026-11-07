@@ -24,7 +24,7 @@
         <span><i class="fa-solid fa-phone"></i> +81 80-3252-1347</span>
       </div>
       <div class="utility-right">
-        <span>Ahmed Bashir</span>
+        
         <span class="japan-time"><i class="fa-solid fa-clock"></i> Japan Time <b id="japanTime">--:--:--</b></span>
       </div>
     </div>
@@ -136,13 +136,6 @@
           <span>Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
       </div>
-      <div class="category-card" onclick="goCategory('Parts')">
-        <div class="category-image parts-bg"></div>
-        <div class="category-body">
-          <div><span class="category-icon"><i class="fa-solid fa-gears"></i></span><h3>Auto Parts</h3></div>
-          <span>Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -162,7 +155,7 @@
           <div class="col-lg-2 col-md-4">
             <label>Category</label>
             <select id="searchCategory" class="form-select">
-              <option value="">All</option><option>Truck</option><option>Car</option><option>Machinery</option><option>Parts</option>
+              <option value="">All</option><option>Truck</option><option>Car</option><option>Machinery</option>
             </select>
           </div>
           <div class="col-lg-2 col-md-4">
@@ -213,9 +206,9 @@
       <span class="section-kicker">SHOP BY CATEGORY</span>
       <h2 class="section-title">Select a Category</h2>
       <div class="category-tabs">
-        <button class="category-tab active" onclick="filterHomeCategory('Truck', this)"><i class="fa-solid fa-truck"></i> Truck</button>
-        <button class="category-tab" onclick="filterHomeCategory('Car', this)"><i class="fa-solid fa-car"></i> Car</button>
-        <button class="category-tab" onclick="filterHomeCategory('Machinery', this)"><i class="fa-solid fa-tractor"></i> Machinery</button>
+        <button class="category-tab active" aria-pressed="true" onclick="filterHomeCategory('Truck', this)"><i class="fa-solid fa-truck"></i> Truck</button>
+        <button class="category-tab" aria-pressed="false" onclick="filterHomeCategory('Car', this)"><i class="fa-solid fa-car"></i> Car</button>
+        <button class="category-tab" aria-pressed="false" onclick="filterHomeCategory('Machinery', this)"><i class="fa-solid fa-tractor"></i> Machinery</button>
       </div>
     </div>
   </section>
@@ -293,7 +286,7 @@
       <div class="text-center mb-5"><span class="section-kicker">SIMPLE PROCESS</span><h2 class="section-title">How To Buy From ATC JAPAN</h2></div>
       <div class="process-grid">
         <div class="process-step"><span>01</span><i class="fa-solid fa-car"></i><h3>Choose Vehicle</h3><p>Browse our stock and select the vehicle you are interested in.</p></div>
-        <div class="process-step"><span>02</span><i class="fa-solid fa-paper-plane"></i><h3>Send Inquiry</h3><p>Contact Ahmed Bashir with the stock ID and your requirements.</p></div>
+        <div class="process-step"><span>02</span><i class="fa-solid fa-paper-plane"></i><h3>Send Inquiry</h3><p>Contact our team with the stock ID and your requirements.</p></div>
         <div class="process-step"><span>03</span><i class="fa-solid fa-file-invoice-dollar"></i><h3>Get Quotation</h3><p>Receive vehicle, shipping and payment information.</p></div>
         <div class="process-step"><span>04</span><i class="fa-solid fa-ship"></i><h3>Shipping</h3><p>After the order process, your vehicle is prepared for export.</p></div>
       </div>
@@ -306,7 +299,7 @@
       <div>
         <span class="section-kicker light">READY TO FIND YOUR VEHICLE?</span>
         <h2>Talk to ATC JAPAN today.</h2>
-        <p>Ahmed Bashir · +81 80-3252-1347 · bashirtokyo@gmail.com</p>
+        <p>+81 80-3252-1347 · bashirtokyo@gmail.com</p>
       </div>
       <div class="cta-actions">
         <a href="contact.html" class="btn btn-light btn-lg">Contact Us</a>
@@ -325,7 +318,7 @@
             <span><strong>ATC JAPAN</strong><small>JAPANESE VEHICLE EXPORT</small></span>
           </div>
           <p>Japanese used cars, trucks and construction machinery for worldwide customers.</p>
-          <p><i class="fa-solid fa-user"></i> Ahmed Bashir</p>
+          
           <p><i class="fa-solid fa-envelope"></i> bashirtokyo@gmail.com</p>
           <p><i class="fa-solid fa-phone"></i> +81 80-3252-1347</p>
           <div class="socials">
