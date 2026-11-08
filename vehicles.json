@@ -1,24 +1,5 @@
 [
   {
-    "id": "ATC-525323",
-    "name": "Car",
-    "category": "Car",
-    "make": "Toyato",
-    "model": "",
-    "body": "Suv",
-    "year": 2024,
-    "mileage": "",
-    "fuel": "",
-    "transmission": "",
-    "drive": "",
-    "price": 25000,
-    "images": [
-      "https://raw.githubusercontent.com/ramshishamsu/atc-japan/main/uploads/ATC-525323-1794144527399-0.jpg"
-    ],
-    "description": "",
-    "image": "https://raw.githubusercontent.com/ramshishamsu/atc-japan/main/uploads/ATC-525323-1794144527399-0.jpg"
-  },
-  {
     "id": "ATC-1001",
     "name": "2024 TOYOTA LAND CRUISER PRADO",
     "category": "Car",
