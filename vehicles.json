@@ -1,5 +1,24 @@
 [
   {
+    "id": "ATC-127422",
+    "name": "prado",
+    "category": "Car",
+    "make": "toyota",
+    "model": "",
+    "body": "suv",
+    "year": 2024,
+    "mileage": "",
+    "fuel": "",
+    "transmission": "",
+    "drive": "",
+    "price": 25000,
+    "images": [
+      "https://raw.githubusercontent.com/ramshishamsu/atc-japan/main/uploads/ATC-127422-1794145129410-0.jpg"
+    ],
+    "description": "",
+    "image": "https://raw.githubusercontent.com/ramshishamsu/atc-japan/main/uploads/ATC-127422-1794145129410-0.jpg"
+  },
+  {
     "id": "ATC-1001",
     "name": "2024 TOYOTA LAND CRUISER PRADO",
     "category": "Car",
