@@ -149,3 +149,22 @@ img{max-width:100%;display:block}
   .brand-grid{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:10px;row-gap:24px}
   .brand-card{min-height:118px}
 }
+
+
+/* Machinery showcase carousel */
+.machinery-showcase{background:#f5f7f8;padding-top:64px;padding-bottom:64px}
+.machinery-carousel{position:relative;overflow:hidden;border-radius:18px;min-height:390px;background:#15394b;box-shadow:0 14px 35px rgba(13,39,52,.14)}
+.machinery-carousel-track{position:relative;min-height:390px}
+.machinery-slide{position:absolute;inset:0;display:flex;align-items:center;min-height:390px;padding:54px 8%;background-image:var(--machinery-image);background-size:cover;background-position:center;opacity:0;visibility:hidden;transition:opacity .65s ease;}
+.machinery-slide.active{position:relative;opacity:1;visibility:visible}
+.machinery-slide-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,31,43,.88) 0%,rgba(8,31,43,.62) 48%,rgba(8,31,43,.12) 100%)}
+.machinery-slide-content{position:relative;z-index:1;max-width:590px;color:#fff}
+.machinery-slide-content .eyebrow{color:#ff9f16;font-weight:800;letter-spacing:2px;font-size:.78rem}
+.machinery-slide-content h3{color:#fff;font-size:clamp(2rem,4vw,3.25rem);font-weight:800;margin:12px 0}
+.machinery-slide-content p{color:#f1f5f7;font-size:1.05rem;max-width:520px;margin-bottom:24px}
+.machinery-carousel-control{position:absolute;z-index:3;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:#173e51;box-shadow:0 4px 15px #0002}
+.machinery-carousel-control.prev{left:18px}.machinery-carousel-control.next{right:18px}
+.machinery-carousel-dots{position:absolute;z-index:3;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:9px}
+.machinery-carousel-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.65)}
+.machinery-carousel-dots button.active{width:26px;border-radius:8px;background:#ff9f16}
+@media(max-width:767px){.machinery-showcase{padding-top:42px;padding-bottom:42px}.machinery-carousel,.machinery-carousel-track,.machinery-slide{min-height:330px}.machinery-slide{padding:38px 25px 58px;background-position:center}.machinery-slide-overlay{background:linear-gradient(90deg,rgba(8,31,43,.88),rgba(8,31,43,.42))}.machinery-slide-content p{font-size:.94rem}.machinery-carousel-control{width:36px;height:36px}.machinery-carousel-control.prev{left:10px}.machinery-carousel-control.next{right:10px}}

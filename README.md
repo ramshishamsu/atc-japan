@@ -13,4 +13,4 @@
 This is a static HTML/JS prototype. Admin data and uploaded photos are stored in the browser's localStorage. For a real multi-user production admin dashboard, connect the admin to a backend/database and cloud image storage (for example MongoDB + Cloudinary).
 
 ## Deploy
-Upload the contents of `project folder` to Netlify, or drag the folder/ZIP into Netlify Drop.
+Upload the contents of `ATC-JAPAN-UPDATED` to Netlify, or drag the folder/ZIP into Netlify Drop.

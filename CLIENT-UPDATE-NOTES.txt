@@ -1,0 +1,11 @@
+ATC JAPAN - CLIENT UPDATE
+
+Included updates:
+- Machinery banner carousel added to the homepage with 3 slides, autoplay (5 seconds), arrows, dots, pause-on-hover and mobile styling.
+- Existing Honda and Suzuki logo assets retained at assets/logos/honda.svg and assets/logos/suzuki.svg.
+- Existing Netlify Functions, shared GitHub inventory integration, admin files and website pages retained from the supplied project archive.
+
+Important: The current Honda/Suzuki SVG files are the existing assets in the source project; they were not replaced with new client-supplied artwork. Please verify client approval of these exact logo files.
+The carousel uses remote image URLs already embedded in the HTML. Internet access is required to load those banner photographs. Replace with client-approved images if supplied.
+
+Deploy: extract this folder, test locally, then commit and push to the connected GitHub production branch to trigger Netlify deployment. Do not change DNS settings.

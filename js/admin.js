@@ -11,40 +11,13 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('adminPassword').addEventListener('keydown',e=>{if(e.key==='Enter')loginAdmin();});
 });
 async function request(action,payload={},auth=true){
-  let response;
-  try {
-    response=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json',...(auth?{Authorization:`Bearer ${adminToken}`}:{})},body:JSON.stringify({action,...payload})});
-  } catch(error) {
-    throw new Error('Cannot reach the Netlify admin function. Check that this site is deployed on Netlify and that /.netlify/functions/vehicles is available.');
-  }
-  const data=await response.json().catch(()=>({}));
-  if(!response.ok){
-    if(response.status===404) throw new Error('Admin function not found. Redeploy the complete project folder to Netlify, including netlify/functions/vehicles.js.');
-    if(response.status===503) throw new Error(data.error||'Admin is not configured. Add the required Netlify environment variables and redeploy.');
-    throw new Error(data.error||`Request failed (HTTP ${response.status}).`);
-  }
-  return data;
+  const response=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json',...(auth?{Authorization:`Bearer ${adminToken}`}:{})},body:JSON.stringify({action,...payload})});
+  const data=await response.json();if(!response.ok)throw new Error(data.error||'Request failed');return data;
 }
 async function loginAdmin(){
-  const button=document.getElementById('adminLoginBtn');
-  const password=document.getElementById('adminPassword').value;
-  if(!password){alert('Please enter your admin password.');return;}
-  button.disabled=true;
-  try{
-    const data=await request('login',{password},false);
-    if(!data.token) throw new Error('The server did not return an admin session. Check the Netlify function deployment.');
-    adminToken=data.token;
-    sessionStorage.setItem('atcAdminToken',adminToken);
-    document.getElementById('adminLogin').classList.add('d-none');
-    document.getElementById('adminApp').classList.remove('d-none');
-    await initAdmin();
-  } catch(e) {
-    adminToken='';
-    sessionStorage.removeItem('atcAdminToken');
-    alert(e.message==='Incorrect password'
-      ? 'Incorrect admin password. It must exactly match the ADMIN_PASSWORD value in Netlify environment variables. After changing that value, trigger a new deploy.'
-      : e.message);
-  } finally {button.disabled=false;}
+  const button=document.getElementById('adminLoginBtn');button.disabled=true;
+  try{const data=await request('login',{password:document.getElementById('adminPassword').value},false);adminToken=data.token;sessionStorage.setItem('atcAdminToken',adminToken);document.getElementById('adminLogin').classList.add('d-none');document.getElementById('adminApp').classList.remove('d-none');await initAdmin();}
+  catch(e){alert(e.message);}finally{button.disabled=false;}
 }
 async function initAdmin(){
   try{const response=await fetch(apiUrl,{cache:'no-store'});const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not load inventory');adminVehicles=(data.vehicles||[]).map(normalizeVehicle);renderAdmin();}
@@ -74,6 +47,6 @@ function editVehicle(id){const x=adminVehicles.find(v=>v.id===id);if(!x)return;c
 function resetForm(){document.getElementById('vehicleForm').reset();document.getElementById('vehicleId').value='';document.getElementById('cancelEdit').classList.add('d-none');selectedImages=[];renderImagePreview();document.querySelector('#vehicleForm button[type="submit"]').innerHTML='<i class="fa-solid fa-save"></i> Save Vehicle';}
 async function deleteVehicle(id){if(!confirm('Delete this vehicle from the live website for all visitors?'))return;try{const data=await request('delete',{id});adminVehicles=data.vehicles.map(normalizeVehicle);renderAdmin();}catch(e){alert('Could not delete vehicle: '+e.message);}}
 function updateStorageInfo(){const el=document.getElementById('storageInfo');if(el)el.textContent='Shared online inventory · Published vehicles are visible to all website visitors.';}
-function exportVehicleBackup(){const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),vehicles:adminVehicles},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='vehicles-backup.json';a.click();URL.revokeObjectURL(url);}
+function exportVehicleBackup(){const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),vehicles:adminVehicles},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='atc-japan-vehicles-backup.json';a.click();URL.revokeObjectURL(url);}
 function importVehicleBackup(e){alert('For safety, restore is disabled in this version. Add or edit vehicles through the dashboard.');e.target.value='';}
 function escapeHtml(str){return String(str??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}

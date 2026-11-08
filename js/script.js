@@ -1,4 +1,29 @@
+
+function initMachineryCarousel(){
+  const carousel=document.getElementById('machineryCarousel');
+  if(!carousel) return;
+  const slides=[...carousel.querySelectorAll('.machinery-slide')];
+  const dots=[...carousel.querySelectorAll('.machinery-carousel-dots button')];
+  if(slides.length<2) return;
+  let current=0, timer;
+  const show=(index)=>{
+    current=(index+slides.length)%slides.length;
+    slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));
+    dots.forEach((dot,i)=>{dot.classList.toggle('active',i===current);dot.setAttribute('aria-pressed',i===current?'true':'false');});
+  };
+  const restart=()=>{clearInterval(timer);timer=setInterval(()=>show(current+1),5000);};
+  carousel.querySelector('.prev')?.addEventListener('click',()=>{show(current-1);restart();});
+  carousel.querySelector('.next')?.addEventListener('click',()=>{show(current+1);restart();});
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>{show(i);restart();}));
+  carousel.addEventListener('mouseenter',()=>clearInterval(timer));
+  carousel.addEventListener('mouseleave',restart);
+  carousel.addEventListener('focusin',()=>clearInterval(timer));
+  carousel.addEventListener('focusout',restart);
+  show(0);restart();
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
+  initMachineryCarousel();
   await loadVehicles();
   updateJapanTime();
   setInterval(updateJapanTime, 1000);
