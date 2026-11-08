@@ -106,7 +106,6 @@
     "name": "2020 ISUZU FORWARD DUMP TIPPER",
     "category": "Truck",
     "make": "Isuzu",
-    "model": "",
     "body": "Dump Tipper",
     "year": 2020,
     "mileage": "82,000 KM",
@@ -115,10 +114,9 @@
     "drive": "6x4",
     "price": 36500,
     "images": [
-      "https://raw.githubusercontent.com/ramshishamsu/atc-japan/main/uploads/ATC-2003-1794140482305-1.jpg"
+      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN.",
-    "image": "https://raw.githubusercontent.com/ramshishamsu/atc-japan/main/uploads/ATC-2003-1794140482305-1.jpg"
+    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
   },
   {
     "id": "ATC-2004",
@@ -134,6 +132,23 @@
     "price": 26000,
     "images": [
       "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
+  },
+  {
+    "id": "ATC-3001",
+    "name": "2020 KOMATSU PC128 EXCAVATOR",
+    "category": "Machinery",
+    "make": "Komatsu",
+    "body": "Excavator",
+    "year": 2020,
+    "mileage": "4,250 Hours",
+    "fuel": "Diesel",
+    "transmission": "Hydraulic",
+    "drive": "Crawler",
+    "price": 42000,
+    "images": [
+      "https://images.unsplash.com/photo-1579492450119-80542d516179?auto=format&fit=crop&w=1000&q=80"
     ],
     "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
   },
