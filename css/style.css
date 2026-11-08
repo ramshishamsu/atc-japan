@@ -39,7 +39,7 @@ img{max-width:100%;display:block}
 .hero-slide{min-height:570px;position:relative;background-size:cover;background-position:center}
 .hero-one{background-image:url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=2000&q=85")}
 .hero-two{background-image:url("../assets/home/truck-hero.svg")}
-.hero-three{background-image:url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=85")}
+.hero-three{background-image:url("../assets/home/machinery-banner.jpg")}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,22,31,.85),rgba(5,22,31,.35),rgba(5,22,31,.12))}
 .hero-content{position:relative;z-index:2;color:#fff;padding-top:105px;padding-bottom:180px}
 .eyebrow,.section-kicker{font-size:12px;letter-spacing:2px;font-weight:800;color:var(--orange)}
