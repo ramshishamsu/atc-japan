@@ -142,6 +142,7 @@
     "name": "2020 KOMATSU PC128 EXCAVATOR",
     "category": "Machinery",
     "make": "Komatsu",
+    "model": "",
     "body": "Excavator",
     "year": 2020,
     "mileage": "4,250 Hours",
@@ -152,7 +153,8 @@
     "images": [
       "https://images.unsplash.com/photo-1579492450119-80542d516179?auto=format&fit=crop&w=1000&q=80"
     ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
+    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN.",
+    "image": "https://images.unsplash.com/photo-1579492450119-80542d516179?auto=format&fit=crop&w=1000&q=80"
   },
   {
     "id": "ATC-3002",
