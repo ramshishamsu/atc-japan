@@ -54,7 +54,7 @@ img{max-width:100%;display:block}
 .category-image{height:135px;background-size:cover;background-position:center}
 .truck-bg{background-image:linear-gradient(rgba(15,47,64,.12),rgba(15,47,64,.12)),url("../assets/home/truck-hero.svg")}
 .car-bg{background-image:linear-gradient(rgba(15,47,64,.2),rgba(15,47,64,.2)),url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80")}
-.machine-bg{background-image:linear-gradient(rgba(15,47,64,.2),rgba(15,47,64,.2)),url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80")}
+.machine-bg{background-image:linear-gradient(rgba(15,47,64,.2),rgba(15,47,64,.2)),url("../assets/home/machinery-lineup.jpg")}
 .parts-bg{background-image:linear-gradient(rgba(15,47,64,.25),rgba(15,47,64,.25)),url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80")}
 .category-body{padding:13px 16px;display:flex;justify-content:space-between;align-items:center;color:var(--navy)}
 .category-body>div{display:flex;align-items:center;gap:10px}
@@ -168,3 +168,6 @@ img{max-width:100%;display:block}
 .machinery-carousel-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.65)}
 .machinery-carousel-dots button.active{width:26px;border-radius:8px;background:#ff9f16}
 @media(max-width:767px){.machinery-showcase{padding-top:42px;padding-bottom:42px}.machinery-carousel,.machinery-carousel-track,.machinery-slide{min-height:330px}.machinery-slide{padding:38px 25px 58px;background-position:center}.machinery-slide-overlay{background:linear-gradient(90deg,rgba(8,31,43,.88),rgba(8,31,43,.42))}.machinery-slide-content p{font-size:.94rem}.machinery-carousel-control{width:36px;height:36px}.machinery-carousel-control.prev{left:10px}.machinery-carousel-control.next{right:10px}}
+
+/* Client-supplied Honda and Suzuki logo artwork */
+.brand-logo img{max-width:100%;max-height:100%;object-fit:contain;}

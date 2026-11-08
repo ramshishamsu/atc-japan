@@ -25,8 +25,8 @@ const brandGroups = {
   Car: [
     ["Toyota","assets/logos/toyota.svg"],
     ["Nissan","assets/logos/nissan.svg"],
-    ["Honda","assets/logos/honda.svg"],
-    ["Suzuki","assets/logos/suzuki.svg"],
+    ["Honda","assets/logos/honda-client.png"],
+    ["Suzuki","assets/logos/suzuki-client.png"],
     ["Mazda","assets/logos/mazda.svg"],
     ["Daihatsu","assets/logos/daihatsu.png"],
     ["Subaru","assets/logos/subaru.svg"],
