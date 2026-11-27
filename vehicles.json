@@ -1,22 +1,5 @@
 [
   {
-    "id": "ATC-2004",
-    "name": "2017 HINO TANK TRUCK",
-    "category": "Truck",
-    "make": "Hino",
-    "body": "Tank Truck",
-    "year": 2017,
-    "mileage": "105,000 KM",
-    "fuel": "Diesel",
-    "transmission": "Manual",
-    "drive": "2WD",
-    "price": 26000,
-    "images": [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"
-    ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
-  },
-  {
     "id": "ATC-3001",
     "name": "2020 KOMATSU PC128 EXCAVATOR",
     "category": "Machinery",
