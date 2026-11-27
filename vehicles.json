@@ -1,22 +1,5 @@
 [
   {
-    "id": "ATC-2001",
-    "name": "2024 MITSUBISHI CANTER FLAT BODY",
-    "category": "Truck",
-    "make": "Mitsubishi Fuso",
-    "body": "Flat Body",
-    "year": 2024,
-    "mileage": "5,449 KM",
-    "fuel": "Diesel",
-    "transmission": "Manual",
-    "drive": "2WD",
-    "price": 32000,
-    "images": [
-      "https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=1000&q=80"
-    ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
-  },
-  {
     "id": "ATC-2002",
     "name": "2018 HINO DUTRO CRANE TRUCK",
     "category": "Truck",
