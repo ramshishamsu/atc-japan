@@ -1,22 +1,5 @@
 [
   {
-    "id": "ATC-3002",
-    "name": "2019 HITACHI ZX135US EXCAVATOR",
-    "category": "Machinery",
-    "make": "Hitachi",
-    "body": "Excavator",
-    "year": 2019,
-    "mileage": "5,100 Hours",
-    "fuel": "Diesel",
-    "transmission": "Hydraulic",
-    "drive": "Crawler",
-    "price": 38500,
-    "images": [
-      "https://images.unsplash.com/photo-1580901368919-9e61a7a7f3a7?auto=format&fit=crop&w=1000&q=80"
-    ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
-  },
-  {
     "id": "ATC-3003",
     "name": "2021 KUBOTA TRACTOR",
     "category": "Machinery",
