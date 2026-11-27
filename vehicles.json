@@ -1,22 +1,5 @@
 [
   {
-    "id": "ATC-1001",
-    "name": "2024 TOYOTA LAND CRUISER PRADO",
-    "category": "Car",
-    "make": "Toyota",
-    "body": "SUV",
-    "year": 2024,
-    "mileage": "18,500 KM",
-    "fuel": "Petrol",
-    "transmission": "Auto",
-    "drive": "4WD",
-    "price": 42000,
-    "images": [
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80"
-    ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
-  },
-  {
     "id": "ATC-1002",
     "name": "2021 NISSAN CARAVAN",
     "category": "Car",
