@@ -1,22 +1,5 @@
 [
   {
-    "id": "ATC-1004",
-    "name": "2019 SUZUKI JIMNY",
-    "category": "Car",
-    "make": "Suzuki",
-    "body": "SUV",
-    "year": 2019,
-    "mileage": "48,000 KM",
-    "fuel": "Petrol",
-    "transmission": "Auto",
-    "drive": "4WD",
-    "price": 17900,
-    "images": [
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1000&q=80"
-    ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
-  },
-  {
     "id": "ATC-2001",
     "name": "2024 MITSUBISHI CANTER FLAT BODY",
     "category": "Truck",
