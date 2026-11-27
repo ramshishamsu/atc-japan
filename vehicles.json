@@ -1,22 +1,5 @@
 [
   {
-    "id": "ATC-2003",
-    "name": "2020 ISUZU FORWARD DUMP TIPPER",
-    "category": "Truck",
-    "make": "Isuzu",
-    "body": "Dump Tipper",
-    "year": 2020,
-    "mileage": "82,000 KM",
-    "fuel": "Diesel",
-    "transmission": "Manual",
-    "drive": "6x4",
-    "price": 36500,
-    "images": [
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=1000&q=80"
-    ],
-    "description": "Quality Japanese used vehicle available for worldwide export from ATC JAPAN."
-  },
-  {
     "id": "ATC-2004",
     "name": "2017 HINO TANK TRUCK",
     "category": "Truck",
